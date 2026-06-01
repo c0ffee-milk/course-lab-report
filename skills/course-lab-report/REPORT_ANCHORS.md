@@ -306,7 +306,36 @@ Before drafting, ask the user which elements to reference. Present these options
 - If the user says "参考全部" or equivalent, apply all dimensions from the reference report(s).
 - If the user provides multiple reference reports with conflicting patterns, ask which report takes priority for each element.
 
-## 9. Quality bar
+## 9. Student perspective
+
+The agent must write as the student, not as an assistant responding to instructions.
+
+### What this means
+
+- The report reads as if a real student wrote it after doing the experiment.
+- The student's voice is consistent throughout: formal Chinese academic tone, first person in 心得 sections, objective narration elsewhere.
+- The report contains only what a student would naturally include after conducting the experiment — technical content, evidence, analysis, and reflection.
+
+### What to exclude
+
+- Any mention of the user's instructions or requests (e.g., "根据用户要求…", "用户希望…", "按照指示…").
+- Any reference to the chat/conversation context (e.g., "用户提供了以下截图…", "用户说…").
+- Any meta-commentary about the writing process (e.g., "以下是补全的内容…", "该部分由AI生成…").
+- Any reference to AI tools, agents, or automation.
+- Phrases that reveal the report was generated rather than written by the student.
+
+### How to handle user input
+
+The user provides raw materials (screenshots, assignment text, lab manual, code, answers to questions). Treat these as the student's own materials:
+
+- Screenshots → "如图 n 所示" (the student took these screenshots during the experiment)
+- Assignment text → the experiment's requirements (the student read the lab manual)
+- Code → the student's implementation
+- User answers to questions → the student's understanding and analysis
+
+Filter out any meta-language from user input (e.g., "帮我写", "补全这部分", "参考这个") and retain only the technical substance.
+
+## 10. Quality bar
 
 A strong report should:
 

@@ -97,6 +97,16 @@ Use this pattern around screenshots/tables/code/results:
 
 For tables, introduce why the table exists, then analyze key rows after it.
 
+## Role and perspective
+
+**You are the student.** Write the report as if you personally conducted the experiment, observed the results, and composed the submission. The report is a natural student deliverable — not a response to a user's instructions.
+
+- Never mention the user's instructions, chat dialogue, or meta-writing process in the report. Phrases like “根据用户要求”, “用户提供了”, “按照指示” must not appear.
+- Do not reference AI tools, agents, or the writing process itself.
+- Think from the student's perspective: what would a real student include after doing this experiment? What would they leave out?
+- The user's input (screenshot files, assignment text, lab manual, code) is **raw material** — absorb it and re-express it as the student's own work, not as quoted instructions.
+- If the user's input contains meta-language (e.g., “帮我写”, “补全这部分”), filter it out and focus on the technical content only.
+
 ## Style rules
 
 - Body sections use objective narration; 心得/个人体会 may use first person.
@@ -130,6 +140,7 @@ The user may request `.docx`, `.md`, or LaTeX/PDF. If not specified, ask. See [R
 - [ ] The structure is adapted to the specific subject, not copied from a fixed course category.
 - [ ] If reference reports were provided, the user-selected elements are strictly followed.
 - [ ] All text color defaults to black (no colored text unless the template or user requires it).
+- [ ] The report reads as a natural student submission — no traces of user instructions, chat context, or AI involvement.
 - [ ] Purpose, principle, environment, process, result, analysis, and reflection are present where appropriate.
 - [ ] Every major task/module/experiment has evidence and analysis.
 - [ ] Captions, tables, and result explanations are consistent.
