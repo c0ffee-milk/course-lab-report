@@ -239,6 +239,7 @@ Use `docx-editor-cn` and follow:
 - A4 page; margins 2.5 cm unless a provided template differs.
 - Chinese body font: 宋体; headings: 黑体; English/code: Cambria Math or Times New Roman.
 - Body size: 小四 / 12 pt; first-line indent 2 Chinese characters.
+- **All text color defaults to black (RGB 0,0,0). Do not use colored text unless the template or user explicitly requires it.**
 - Heading hierarchy should be clean and numbered.
 - Long reports include TOC.
 - Figure captions below figures; table captions above tables.
@@ -250,6 +251,7 @@ Use `docx-editor-cn` and follow:
 
 - Use GitHub-flavored Markdown.
 - Headings: `#` for title, `##` for major sections, `###` for subsections.
+- **All text is plain black by default. Do not use colored text or HTML color tags unless the user explicitly requires it.**
 - Images: `![图 n 描述](relative/path.png)` with a caption line below.
 - Tables: use alignment columns; keep cell content concise.
 - Code: fenced blocks with language identifier (` ```bash `, ` ```c `, etc.).
@@ -259,6 +261,7 @@ Use `docx-editor-cn` and follow:
 
 - Use `ctexart` or `ctexrep` document class with `UTF8` option for Chinese support.
 - Page geometry: A4, margins 2.5 cm (`\usepackage[a4paper, margin=2.5cm]{geometry}`).
+- **All text color defaults to black. Do not use `\textcolor` or `\color` commands unless the template or user explicitly requires it.**
 - Fonts: `ctex` handles 宋体/黑体 automatically; use `\ttfamily` or `listings`/`minted` for code.
 - Body: 12 pt, first-line indent 2 characters (`\setlength{\parindent}{2em}`).
 - Headings: `\section`, `\subsection`, `\subsubsection` with automatic numbering.
@@ -279,7 +282,31 @@ report/
 └── Makefile          # optional, wraps latexmk
 ```
 
-## 8. Quality bar
+## 8. Reference report handling
+
+When the user provides reference reports (e.g., past reports, sample reports, template reports):
+
+### What to ask
+
+Before drafting, ask the user which elements to reference. Present these options:
+
+| Element | What it covers |
+|---------|---------------|
+| 章节结构 | Heading hierarchy, section order, section naming conventions |
+| 排版格式 | Page layout, fonts, spacing, margins, table style, caption format |
+| 写作风格 | Tone, sentence patterns, transition phrases, paragraph structure |
+| 证据呈现 | How screenshots, tables, code, and logs are introduced, captioned, and analyzed |
+| 内容深度 | Level of detail in principles, process descriptions, result analysis, and reflection |
+| 特定章节 | Specific sections to model (e.g., replicate the reference's 心得 or 问题思考 style) |
+
+### How to apply
+
+- **Only use what the user explicitly selects.** Do not copy structure, style, or content from reference reports by default.
+- **When elements are selected, follow them strictly.** For example, if the user selects "章节结构" and the reference uses `实验目的 → 实验原理 → 实验环境 → 实验步骤 → 实验结果 → 心得体会`, use that exact order and naming.
+- If the user says "参考全部" or equivalent, apply all dimensions from the reference report(s).
+- If the user provides multiple reference reports with conflicting patterns, ask which report takes priority for each element.
+
+## 9. Quality bar
 
 A strong report should:
 

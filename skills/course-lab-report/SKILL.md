@@ -14,6 +14,7 @@ When asked to write a course/lab report:
 3. Start from the universal structure below, then adapt section names, order, and depth to the assignment and any provided school template.
 4. Use the user's stable style: formal Chinese, purpose → principle → process → result → analysis → reflection, with screenshot/table/code evidence.
 5. Ask the user for output format (`.docx`, `.md`, or LaTeX/PDF) if not specified. Apply the corresponding formatting anchors in [REPORT_ANCHORS.md](REPORT_ANCHORS.md).
+6. If the user provides reference reports, **ask which elements to reference** before drafting: chapter structure, formatting/layout, writing style, evidence approach, content depth, or specific sections. Do not assume — let the user choose. Once specified, follow the reference points strictly throughout the report.
 
 ## Universal skeleton
 
@@ -78,6 +79,10 @@ Use this pattern around screenshots/tables/code/results:
 
 For tables, introduce why the table exists, then analyze key rows after it.
 
+## Reference report handling
+
+When the user provides reference reports, **ask which elements to reference** before drafting: chapter structure, formatting, writing style, evidence approach, content depth, or specific sections. Do not assume — let the user choose. Once specified, follow the reference points strictly throughout the report. If the user says "参考全部", apply all elements. See [REPORT_ANCHORS.md](REPORT_ANCHORS.md) for the full reference element breakdown.
+
 ## Style rules
 
 - Body sections use objective narration; 心得/个人体会 may use first person.
@@ -109,6 +114,8 @@ The user may request `.docx`, `.md`, or LaTeX/PDF. If not specified, ask. See [R
 
 - [ ] The report follows any provided school template.
 - [ ] The structure is adapted to the specific subject, not copied from a fixed course category.
+- [ ] If reference reports were provided, the user-selected elements are strictly followed.
+- [ ] All text color defaults to black (no colored text unless the template or user requires it).
 - [ ] Purpose, principle, environment, process, result, analysis, and reflection are present where appropriate.
 - [ ] Every major task/module/experiment has evidence and analysis.
 - [ ] Captions, tables, and result explanations are consistent.
