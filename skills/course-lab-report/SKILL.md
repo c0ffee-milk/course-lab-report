@@ -7,14 +7,32 @@ description: Write Chinese computer-related university lab reports and course re
 
 ## Quick start
 
-When asked to write a course/lab report:
+When asked to write a course/lab report, follow these steps **in order**. Do NOT start drafting until steps 1–3 are complete.
+
+### Step 1 — Check for reference reports (MANDATORY GATE)
+
+**Before doing anything else**, check whether the user provided any reference reports, sample reports, or past reports (as files, links, or mentions).
+
+- **If reference reports exist**: STOP and ask the user which elements to reference. Present these options explicitly:
+  1. 章节结构（heading order and section naming）
+  2. 排版格式（layout, fonts, spacing, table style）
+  3. 写作风格（tone, transitions, paragraph patterns）
+  4. 证据呈现（how screenshots/tables/code are introduced and analyzed）
+  5. 内容深度（detail level in principles, process, results）
+  6. 特定章节（specific sections to model after）
+  7. 以上全部（reference all elements）
+
+  **Wait for the user's answer before proceeding.** Do not guess, do not assume "参考全部", do not start writing. Once the user answers, follow their selected elements strictly throughout the report.
+
+- **If no reference reports exist**: skip this step and continue.
+
+### Step 2 — Analyze the assignment
 
 1. Treat it as a **general computer-course report**, not as a fixed course-category template.
 2. Infer the concrete subject from the assignment: concepts, tools, environment, tasks, code, screenshots, logs, measurements, or expected outputs.
 3. Start from the universal structure below, then adapt section names, order, and depth to the assignment and any provided school template.
 4. Use the user's stable style: formal Chinese, purpose → principle → process → result → analysis → reflection, with screenshot/table/code evidence.
 5. Ask the user for output format (`.docx`, `.md`, or LaTeX/PDF) if not specified. Apply the corresponding formatting anchors in [REPORT_ANCHORS.md](REPORT_ANCHORS.md).
-6. If the user provides reference reports, **ask which elements to reference** before drafting: chapter structure, formatting/layout, writing style, evidence approach, content depth, or specific sections. Do not assume — let the user choose. Once specified, follow the reference points strictly throughout the report.
 
 ## Universal skeleton
 
@@ -78,10 +96,6 @@ Use this pattern around screenshots/tables/code/results:
 ```
 
 For tables, introduce why the table exists, then analyze key rows after it.
-
-## Reference report handling
-
-When the user provides reference reports, **ask which elements to reference** before drafting: chapter structure, formatting, writing style, evidence approach, content depth, or specific sections. Do not assume — let the user choose. Once specified, follow the reference points strictly throughout the report. If the user says "参考全部", apply all elements. See [REPORT_ANCHORS.md](REPORT_ANCHORS.md) for the full reference element breakdown.
 
 ## Style rules
 
