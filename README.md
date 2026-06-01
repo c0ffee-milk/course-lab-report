@@ -160,13 +160,3 @@ cp -R skills/course-lab-report ~/.codex/skills/course-lab-report
 
 - 生成 `.docx` 时需要安装 `docx-editor-cn`，否则请跳过该格式。
 - 生成 LaTeX/PDF 时，Agent 会自动检查本机是否安装 `xelatex`，未安装则提示用户。
-
-## 注意事项
-
-- 本 Skill 专为中文报告生成设计。
-- 安全实验报告中，攻击步骤需明确为授权课程实验内容，并包含防御启示。
-- 代码/设计报告应侧重功能、接口、关键逻辑和验证说明，而非大段代码堆砌。
-
-## 许可证
-
-尚未添加许可证。如需明确复用条款，请自行添加。
