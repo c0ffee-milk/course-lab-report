@@ -41,11 +41,15 @@ Instead of classifying reports into rigid categories, the skill asks the agent t
 
 ```text
 course-lab-report/
-├── SKILL.md            # Main skill instructions and trigger description
-├── REPORT_ANCHORS.md   # Detailed structure, writing, evidence, and formatting anchors
-├── INSTALL.md          # Manual installation notes
-└── README.md           # Public repository documentation
+├── README.md
+├── INSTALL.md
+└── skills/
+    └── course-lab-report/
+        ├── SKILL.md            # Main skill instructions and trigger description
+        └── REPORT_ANCHORS.md   # Detailed structure, writing, evidence, and formatting anchors
 ```
+
+Only `skills/course-lab-report/` is the installable skill folder. Do not install the repository root.
 
 ## Installation
 
@@ -54,7 +58,7 @@ course-lab-report/
 Copy the skill folder into your Claude Code skills directory:
 
 ```bash
-cp -R course-lab-report ~/.claude/skills/course-lab-report
+cp -R skills/course-lab-report ~/.claude/skills/course-lab-report
 ```
 
 Restart or reload Claude Code so it can discover the skill.
@@ -64,14 +68,14 @@ Restart or reload Claude Code so it can discover the skill.
 Copy the skill folder into your Codex skills directory:
 
 ```bash
-cp -R course-lab-report ~/.codex/skills/course-lab-report
+cp -R skills/course-lab-report ~/.codex/skills/course-lab-report
 ```
 
 Restart or reload Codex so it can discover the skill.
 
 ### Other agents
 
-If your agent supports the same skill format, copy the whole folder into that agent's skills directory. Keep `SKILL.md` and `REPORT_ANCHORS.md` together because the main skill references the anchor file.
+If your agent supports the same skill format, copy `skills/course-lab-report/` into that agent's skills directory. Keep `SKILL.md` and `REPORT_ANCHORS.md` together because the main skill references the anchor file.
 
 ## Usage examples
 

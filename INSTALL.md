@@ -1,23 +1,41 @@
 # Installation
 
-This skill is intentionally created inside the project directory for manual installation.
+Only the nested folder `skills/course-lab-report/` is the installable skill.
 
-## Files
+Do **not** install the repository root, because it also contains repository documentation such as `README.md` and `INSTALL.md`.
+
+## Installable files
 
 ```text
-course-lab-report/
+skills/course-lab-report/
 ├── SKILL.md
 └── REPORT_ANCHORS.md
 ```
 
-## Manual install
+## Claude Code
 
-Copy the entire `course-lab-report` directory into the target agent's skills directory.
-
-Example:
+From the repository root:
 
 ```bash
-cp -R ./course-lab-report <target-skills-dir>/course-lab-report
+cp -R skills/course-lab-report ~/.claude/skills/course-lab-report
 ```
 
-After installation, restart or reload the target agent so it can discover the new skill description.
+Restart or reload Claude Code so it can discover the skill.
+
+## Codex
+
+From the repository root:
+
+```bash
+cp -R skills/course-lab-report ~/.codex/skills/course-lab-report
+```
+
+Restart or reload Codex so it can discover the skill.
+
+## Other agents
+
+Copy `skills/course-lab-report/` into the target agent's skills directory:
+
+```bash
+cp -R skills/course-lab-report <target-skills-dir>/course-lab-report
+```
