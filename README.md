@@ -1,43 +1,43 @@
-# Course Lab Report Skill
+# 课程实验报告写作 Skill
 
-A Claude/Codex skill for writing Chinese computer-related university lab reports and course reports.
+一个用于撰写中文计算机相关课程实验报告和课程报告的 Claude/Codex Skill。
 
-This skill is designed for general computer-course reporting rather than a fixed subject category. It starts from a universal report structure, then guides the agent to adapt the report to the concrete assignment, evidence, course template, and subject matter.
+本 Skill 面向通用计算机课程报告写作，不按固定课程分类。以通用报告结构为起点，引导 Agent 根据具体作业、证据、课程模板和学科内容自适应调整报告。
 
-## What it does
+## 功能说明
 
-`course-lab-report` helps an agent write, rewrite, expand, polish, structure, or format:
+`course-lab-report` 可协助 Agent 完成以下任务：
 
 - 课程实验报告
 - 实验报告
 - 课程报告
 - 实验设计报告
-- Computer-related course deliverables with screenshots, tables, code, logs, results, or analysis
+- 包含截图、表格、代码、日志、结果或分析的计算机课程文档
 
-It is especially useful when a report needs to preserve a formal Chinese academic style while still adapting to different computer-science subjects.
+尤其适用于需要保持正式中文课程报告风格，同时适应不同计算机学科主题的场景。
 
-## Core approach
+## 核心方法
 
-The skill follows a reusable logic extracted from real course reports:
+本 Skill 从真实课程报告中提炼出可复用的写作逻辑：
 
-1. Basic information and cover fields first
-2. Clear experiment goals and requirements
-3. Principles connected directly to the experiment
-4. Concrete environment and tools
-5. Reproducible process
-6. Evidence-backed results
-7. Result analysis rather than bare success claims
-8. Problems, causes, fixes, and lessons
-9. Specific technical reflection
+1. 先确定基本信息和封面字段
+2. 明确实验目的与要求
+3. 原理知识与实验内容直接关联
+4. 具体的实验环境与工具
+5. 可复现的实验过程
+6. 有证据支撑的实验结果
+7. 结果分析而非简单的成功声明
+8. 问题、原因、解决方法与经验教训
+9. 具体的技术反思
 
-Instead of classifying reports into rigid categories, the skill asks the agent to reason about:
+本 Skill 不将报告归入固定类别，而是引导 Agent 思考：
 
-- What is being configured, built, verified, measured, or analyzed?
-- What evidence proves the result?
-- Should the report use task blocks, module/design blocks, step blocks, Q&A blocks, or a fixed school table?
-- What subject-specific details should be emphasized?
+- 本次实验在配置、构建、验证、测量或分析什么？
+- 什么证据能证明结果？
+- 报告应使用任务模块、设计模块、步骤模块、问答模块还是学校固定表格？
+- 需要强调哪些学科特定的细节？
 
-## Repository structure
+## 仓库结构
 
 ```text
 course-lab-report/
@@ -45,41 +45,41 @@ course-lab-report/
 ├── INSTALL.md
 └── skills/
     └── course-lab-report/
-        ├── SKILL.md            # Main skill instructions and trigger description
-        └── REPORT_ANCHORS.md   # Detailed structure, writing, evidence, and formatting anchors
+        ├── SKILL.md            # 主要 Skill 说明与触发描述
+        └── REPORT_ANCHORS.md   # 详细结构、写作、证据与排版锚点
 ```
 
-Only `skills/course-lab-report/` is the installable skill folder. Do not install the repository root.
+只有 `skills/course-lab-report/` 是可安装的 Skill 文件夹，不要安装仓库根目录。
 
-## Installation
+## 安装方法
 
 ### Claude Code
 
-Copy the skill folder into your Claude Code skills directory:
+将 Skill 文件夹复制到 Claude Code 的 skills 目录：
 
 ```bash
 cp -R skills/course-lab-report ~/.claude/skills/course-lab-report
 ```
 
-Restart or reload Claude Code so it can discover the skill.
+重启或重新加载 Claude Code 以发现该 Skill。
 
 ### Codex
 
-Copy the skill folder into your Codex skills directory:
+将 Skill 文件夹复制到 Codex 的 skills 目录：
 
 ```bash
 cp -R skills/course-lab-report ~/.codex/skills/course-lab-report
 ```
 
-Restart or reload Codex so it can discover the skill.
+重启或重新加载 Codex 以发现该 Skill。
 
-### Other agents
+### 其他 Agent
 
-If your agent supports the same skill format, copy `skills/course-lab-report/` into that agent's skills directory. Keep `SKILL.md` and `REPORT_ANCHORS.md` together because the main skill references the anchor file.
+如果你的 Agent 支持相同的 Skill 格式，将 `skills/course-lab-report/` 复制到该 Agent 的 skills 目录。请将 `SKILL.md` 和 `REPORT_ANCHORS.md` 保持在一起，因为主 Skill 文件会引用锚点文件。
 
-## Usage examples
+## 使用示例
 
-Ask your agent something like:
+向你的 Agent 发送类似以下指令：
 
 ```text
 帮我根据这些截图和实验要求写一份课程实验报告。
@@ -97,13 +97,13 @@ Ask your agent something like:
 润色这份计算机课程报告，让结构更完整，图表说明更规范。
 ```
 
-The agent should load `course-lab-report` when the task involves Chinese computer-course lab reports or similar deliverables.
+当任务涉及中文计算机课程实验报告或类似文档时，Agent 应加载 `course-lab-report`。
 
-## What the skill emphasizes
+## Skill 重点说明
 
-### Universal report structure
+### 通用报告结构
 
-The default structure is:
+默认结构如下：
 
 ```text
 封面/基本信息
@@ -119,11 +119,11 @@ The default structure is:
 参考文献/附录/教师评语评分（如模板要求）
 ```
 
-The skill does not force every section. If a school or course template is provided, it preserves that template and maps the universal logic into it.
+本 Skill 不强制每份报告包含所有章节。如果提供了学校或课程模板，将以该模板为准，并将通用逻辑映射其中。
 
-### Evidence handling
+### 证据处理
 
-Reports should not simply list screenshots. Each figure, table, command, code snippet, log, waveform, metric, or result should be introduced and interpreted:
+报告不应简单罗列截图。每张图片、表格、命令、代码片段、日志、波形、指标或结果都应有引入说明和解读：
 
 ```text
 配置完成后，执行 [命令/操作] 查看 [对象] 的状态，结果如图 n 所示。
@@ -133,28 +133,28 @@ Reports should not simply list screenshots. Each figure, table, command, code sn
 结果显示 [关键现象]，说明 [配置/实现/实验要求] 已经满足。
 ```
 
-### Subject adaptation
+### 学科适配
 
-The skill guides the agent to adapt content for different computer-course tasks, such as:
+本 Skill 引导 Agent 针对不同计算机课程任务调整内容，例如：
 
-- configuration and deployment experiments
-- tool-based procedures
-- program, module, or system implementation
-- operating-system or mechanism analysis
-- measurement or comparison experiments
-- database, data, or machine-learning reports
-- security labs in authorized course environments
-- hardware/FPGA/module-design reports
+- 配置与部署实验
+- 基于工具的操作流程
+- 程序、模块或系统实现
+- 操作系统或机制分析
+- 测量或对比实验
+- 数据库、数据或机器学习报告
+- 授权课程环境下的安全实验
+- 硬件/FPGA/模块设计报告
 
-These are emphasis patterns, not rigid categories.
+以上为强调模式，而非刚性分类。
 
-## Notes
+## 注意事项
 
-- The skill is written for Chinese report generation.
-- For `.docx` output, use it together with a Word/document-generation skill or tool.
-- For security-lab reports, the skill instructs the agent to frame offensive steps as authorized course-lab work and include defensive implications.
-- For code/design reports, the skill favors function/interface/key-logic/verification explanations over dumping large code blocks.
+- 本 Skill 专为中文报告生成设计。
+- 如需输出 `.docx` 文件，请配合 Word 文档生成 Skill 或工具使用。
+- 安全实验报告中，攻击步骤需明确为授权课程实验内容，并包含防御启示。
+- 代码/设计报告应侧重功能、接口、关键逻辑和验证说明，而非大段代码堆砌。
 
-## License
+## 许可证
 
-No license has been added yet. Add one if you want to define reuse terms explicitly.
+尚未添加许可证。如需明确复用条款，请自行添加。
