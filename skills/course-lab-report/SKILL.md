@@ -13,7 +13,7 @@ When asked to write a course/lab report:
 2. Infer the concrete subject from the assignment: concepts, tools, environment, tasks, code, screenshots, logs, measurements, or expected outputs.
 3. Start from the universal structure below, then adapt section names, order, and depth to the assignment and any provided school template.
 4. Use the user's stable style: formal Chinese, purpose → principle → process → result → analysis → reflection, with screenshot/table/code evidence.
-5. For `.docx`, also invoke `docx-editor-cn` and apply the formatting anchors in [REPORT_ANCHORS.md](REPORT_ANCHORS.md).
+5. Ask the user for output format (`.docx`, `.md`, or LaTeX/PDF) if not specified. Apply the corresponding formatting anchors in [REPORT_ANCHORS.md](REPORT_ANCHORS.md).
 
 ## Universal skeleton
 
@@ -86,16 +86,24 @@ For tables, introduce why the table exists, then analyze key rows after it.
 - Security labs must be framed as authorized course-lab work and include defensive implications.
 - Code/design labs should explain function, interface, key logic, and verification rather than dumping code.
 
-## Word output
+## Output formats
 
-When producing `.docx`:
+The user may request `.docx`, `.md`, or LaTeX/PDF. If not specified, ask. See [REPORT_ANCHORS.md](REPORT_ANCHORS.md) for detailed formatting anchors per format.
 
-- Use A4 and Chinese academic formatting unless a template differs.
-- Match the provided cover/template.
-- Include TOC for medium/long reports.
-- Put figure captions below images and table captions above tables.
-- Use one caption numbering style consistently.
-- Use clean centered data tables; prefer three-line tables for formal academic data tables unless the template requires full-grid tables.
+### Word (`.docx`)
+
+- Invoke `docx-editor-cn` for formatting.
+- A4, Chinese academic style, three-line tables, consistent caption numbering.
+
+### Markdown (`.md`)
+
+- GitHub-flavored Markdown; relative image paths; fenced code blocks with language tags.
+
+### LaTeX → PDF
+
+- Check local TeX environment (`which xelatex`); if missing, tell the user to install TeX Live/MacTeX.
+- Build a complete project: `main.tex` (`ctexart`/`ctexrep`), `figures/`, `references.bib`, optional `Makefile`.
+- After writing, compile with `latexmk -xelatex`; if it fails, read the `.log`, fix, and retry. Deliver the PDF to the user.
 
 ## Final checklist
 

@@ -14,6 +14,8 @@
 - 实验设计报告
 - 包含截图、表格、代码、日志、结果或分析的计算机课程文档
 
+支持输出格式：`.docx`、`.md`、LaTeX（自动编译为 PDF）。
+
 尤其适用于需要保持正式中文课程报告风格，同时适应不同计算机学科主题的场景。
 
 ## 核心方法
@@ -148,10 +150,20 @@ cp -R skills/course-lab-report ~/.codex/skills/course-lab-report
 
 以上为强调模式，而非刚性分类。
 
+## 依赖关系
+
+| 格式 | 依赖 | 说明 |
+|------|------|------|
+| `.docx` | [`docx-editor-cn`](https://github.com/nicepkg/docx-editor-cn) | 用于 Word 文档的中文格式化（A4、宋体/黑体、三线表等） |
+| `.md` | 无 | 直接输出 Markdown 文件 |
+| LaTeX → PDF | 本机 TeX 环境（如 TeX Live、MacTeX） | 构建完整 LaTeX 项目并自动编译为 PDF |
+
+- 生成 `.docx` 时需要安装 `docx-editor-cn`，否则请跳过该格式。
+- 生成 LaTeX/PDF 时，Agent 会自动检查本机是否安装 `xelatex`，未安装则提示用户。
+
 ## 注意事项
 
 - 本 Skill 专为中文报告生成设计。
-- 如需输出 `.docx` 文件，请配合 Word 文档生成 Skill 或工具使用。
 - 安全实验报告中，攻击步骤需明确为授权课程实验内容，并包含防御启示。
 - 代码/设计报告应侧重功能、接口、关键逻辑和验证说明，而非大段代码堆砌。
 

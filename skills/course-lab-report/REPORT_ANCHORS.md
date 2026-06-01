@@ -232,7 +232,9 @@ Example:
 
 ## 7. Formatting anchors
 
-If generating `.docx`, use `docx-editor-cn` and follow:
+### Word (`.docx`)
+
+Use `docx-editor-cn` and follow:
 
 - A4 page; margins 2.5 cm unless a provided template differs.
 - Chinese body font: 宋体; headings: 黑体; English/code: Cambria Math or Times New Roman.
@@ -243,6 +245,39 @@ If generating `.docx`, use `docx-editor-cn` and follow:
 - Captions are centered and consistently numbered.
 - Cover/template tables may use full borders and centered cells.
 - Data tables should be clean and centered; use three-line tables for formal academic data tables.
+
+### Markdown (`.md`)
+
+- Use GitHub-flavored Markdown.
+- Headings: `#` for title, `##` for major sections, `###` for subsections.
+- Images: `![图 n 描述](relative/path.png)` with a caption line below.
+- Tables: use alignment columns; keep cell content concise.
+- Code: fenced blocks with language identifier (` ```bash `, ` ```c `, etc.).
+- Place screenshots and figures in a `figures/` subdirectory alongside the `.md` file.
+
+### LaTeX → PDF
+
+- Use `ctexart` or `ctexrep` document class with `UTF8` option for Chinese support.
+- Page geometry: A4, margins 2.5 cm (`\usepackage[a4paper, margin=2.5cm]{geometry}`).
+- Fonts: `ctex` handles 宋体/黑体 automatically; use `\ttfamily` or `listings`/`minted` for code.
+- Body: 12 pt, first-line indent 2 characters (`\setlength{\parindent}{2em}`).
+- Headings: `\section`, `\subsection`, `\subsubsection` with automatic numbering.
+- Figures: `figure` environment with `\centering`, `\includegraphics`, `\caption`.
+- Tables: `table` environment with `booktabs` (`\toprule`, `\midrule`, `\bottomrule`) for three-line style.
+- Code listings: `listings` package with `\lstset{basicstyle=\ttfamily, breaklines=true}`; set `literate` for Chinese if needed.
+- Bibliography: `biblatex` with `biber` backend, or `natbib` with `thebiblivironment`.
+- Build: `latexmk -xelatex -interaction=nonstopmode main.tex` or two passes of `xelatex`.
+- Project structure:
+
+```text
+report/
+├── main.tex
+├── figures/
+│   ├── fig01.png
+│   └── ...
+├── references.bib
+└── Makefile          # optional, wraps latexmk
+```
 
 ## 8. Quality bar
 
